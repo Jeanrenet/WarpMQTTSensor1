@@ -10,4 +10,8 @@ CONFIG -= app_bundle
 
 TEMPLATE = app
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    CMqttClient.cpp
+
+HEADERS += \
+    CMqttClient.h
