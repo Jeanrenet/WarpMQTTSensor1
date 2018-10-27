@@ -51,6 +51,8 @@ public:
      */
     void readData();
 
+    qreal temperature() const;
+
 private:
     qreal           m_accelerometerX;
     qreal           m_accelerometerY;

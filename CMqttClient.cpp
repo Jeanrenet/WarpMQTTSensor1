@@ -69,4 +69,5 @@ void CMqttClient::updateBroker()
     m_mqttClient->publish(TOPIC_PATH_ACC_X, QByteArray::number(m_sensors->accelerometerX()), 0, true);
     m_mqttClient->publish(TOPIC_PATH_ACC_Y, QByteArray::number(m_sensors->accelerometerY()), 0, true);
     m_mqttClient->publish(TOPIC_PATH_ACC_Z, QByteArray::number(m_sensors->accelerometerZ()), 0, true);
+    m_mqttClient->publish(TOPIC_PATH_TEMP, QByteArray::number(m_sensors->temperature()), 0, true);
 }

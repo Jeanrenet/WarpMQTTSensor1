@@ -13,6 +13,7 @@
 const QString TOPIC_PATH_ACC_X = QString(ROOT_TOPIC + HOME_NAME + "accelerometer/X");
 const QString TOPIC_PATH_ACC_Y = QString(ROOT_TOPIC + HOME_NAME + "accelerometer/Y");
 const QString TOPIC_PATH_ACC_Z = QString(ROOT_TOPIC + HOME_NAME + "accelerometer/Z");
+const QString TOPIC_PATH_TEMP = QString(ROOT_TOPIC + HOME_NAME + "temperature");
 
 class CMqttClient : public QObject
 {

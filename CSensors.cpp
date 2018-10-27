@@ -45,10 +45,15 @@ void CSensors::readData()
     m_magnetometerY = stringToValue(MAGNET_Y) * m_magnetometerScale;
     m_magnetometerZ = stringToValue(MAGNET_Z) * m_magnetometerScale;
     //m_pressure = stringToValue(PRESSURE_RAW) * m_barometerScale;
-    //m_temperature = stringToValue(TEMP_RAW) * m_temperatureScale;
+    m_temperature = stringToValue(TEMP_RAW) * m_temperatureScale;
     m_gyroscopeX = stringToValue(GYRO_X) * m_gyroscopeScale;
     m_gyroscopeY = stringToValue(GYRO_Y) * m_gyroscopeScale;
     m_gyroscopeZ = stringToValue(GYRO_Z) * m_gyroscopeScale;
+}
+
+qreal CSensors::temperature() const
+{
+    return m_temperature;
 }
 
 qreal CSensors::accelerometerZ() const
