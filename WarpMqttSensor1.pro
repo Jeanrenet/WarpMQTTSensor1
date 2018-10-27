@@ -11,7 +11,13 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    CMqttClient.cpp
+    CMqttClient.cpp \
+    CSensors.cpp
 
 HEADERS += \
-    CMqttClient.h
+    CMqttClient.h \
+    CSensors.h
+
+target.path = /usr/bin
+
+INSTALLS += target
