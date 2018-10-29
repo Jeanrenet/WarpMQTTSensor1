@@ -2,9 +2,9 @@ QT += core
 QT += mqtt
 QT -= gui
 
+TARGET = WarpMqttSensor1
 CONFIG += c++11
 
-TARGET = WarpMqttSensor1
 CONFIG += console
 CONFIG -= app_bundle
 

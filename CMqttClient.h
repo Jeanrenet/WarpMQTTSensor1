@@ -9,7 +9,7 @@
 
 #define UPDATE_RATE 100 //toute les 100 ms
 #define ROOT_TOPIC  QString("Warp7MQTT/")
-#define HOME_NAME   QString("Jean/")
+#define HOME_NAME   QString("Pierre-Jean/")
 const QString TOPIC_PATH_ACC_X = QString(ROOT_TOPIC + HOME_NAME + "accelerometer/X");
 const QString TOPIC_PATH_ACC_Y = QString(ROOT_TOPIC + HOME_NAME + "accelerometer/Y");
 const QString TOPIC_PATH_ACC_Z = QString(ROOT_TOPIC + HOME_NAME + "accelerometer/Z");

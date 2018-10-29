@@ -17,16 +17,15 @@ CMqttClient::CMqttClient()
     m_sensors = new CSensors();
 
     //initialisation du client mqtt
-    m_mqttClient = new QMqttClient();
-    m_mqttClient->setHostname("test.mosquitto.org");
+    m_mqttClient = new QMqttClient(this);
+    m_mqttClient->setHostname("imx7s.ddns.net");
     m_mqttClient->setPort(1883);
-    m_mqttClient->connectToHost();
     connect(m_mqttClient, &QMqttClient::stateChanged, this, &CMqttClient::clientStateChanged);
+    m_mqttClient->connectToHost();
 
     //initialisation de la boucle de mise à jour et la démarrer
     m_updateEventLoopTimer = new QTimer();
     connect(m_updateEventLoopTimer, &QTimer::timeout, this, &CMqttClient::updateBroker);
-    m_updateEventLoopTimer->start(100);
 }
 
 CMqttClient::~CMqttClient()
@@ -55,6 +54,7 @@ void CMqttClient::clientStateChanged(QMqttClient::ClientState state)
         break;
     case QMqttClient::Connected:
         qDebug() << "Client Connected";
+        m_updateEventLoopTimer->start(100);
         break;
     }
 }
