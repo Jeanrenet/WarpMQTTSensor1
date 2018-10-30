@@ -17,13 +17,13 @@ CMqttClient::CMqttClient()
     m_sensors = new CSensors();
 
     //initialisation du client mqtt
-    m_mqttClient = new QMqttClient(this);
-    m_mqttClient->setHostname("imx7s.ddns.net");
-    m_mqttClient->setPort(1883);
-    connect(m_mqttClient, &QMqttClient::stateChanged, this, &CMqttClient::clientStateChanged);
-    m_mqttClient->connectToHost();
+    m_mqttClient = new QMqttClient(this); //instantiation
+    m_mqttClient->setHostname("imx7s.ddns.net"); //désignation du broker
+    m_mqttClient->setPort(1883);    //numéro de port
+    connect(m_mqttClient, &QMqttClient::stateChanged, this, &CMqttClient::clientStateChanged); //connexion d'un signal à une fonction
+    m_mqttClient->connectToHost(); //connexion
 
-    //initialisation de la boucle de mise à jour et la démarrer
+    //initialisation de la boucle de mise à jour
     m_updateEventLoopTimer = new QTimer();
     connect(m_updateEventLoopTimer, &QTimer::timeout, this, &CMqttClient::updateBroker);
 }
